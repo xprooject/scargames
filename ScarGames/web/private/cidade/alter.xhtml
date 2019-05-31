@@ -16,13 +16,13 @@
                 
                 <div class="ui-g-1"></div>
                 <div class="ui-g-7">
-                    <p:inputText id="descricao" placeholder="Descrição"
+                    <p:inputText id="descricao" placeholder="Nome Cidade"
                                  value="#{cidadeMB.cidade.nome}"
                                  style="width: 95%;"/>
                 </div>
                 <div class="ui-g-3">
                     <p:selectOneMenu id="estado" value="#{cidadeMB.cidade.estado}" style="width:125px"
-                                     placeholder="UF Estado">
+                                     placeholder="UF Estado" >
                         <f:selectItem itemLabel="AC" itemValue="AC" />
                         <f:selectItem itemLabel="AL" itemValue="AL" />
                         <f:selectItem itemLabel="AM" itemValue="AM" />
@@ -51,7 +51,7 @@
                         <f:selectItem itemLabel="SP" itemValue="SP" />
                         <f:selectItem itemLabel="TO" itemValue="TO" />
                     </p:selectOneMenu>
-                </div>  
+                </div>
                 <div class="ui-g-1"></div>
             </div>
             <div align="center" style="margin-top: 20px;">
@@ -65,4 +65,3 @@
         </ui:define>
     </ui:composition>
 </html>
-

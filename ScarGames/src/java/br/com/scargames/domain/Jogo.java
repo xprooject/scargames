@@ -45,6 +45,10 @@ public class Jogo implements Serializable {
     @Column(name="nota")
     private Double nota;
     
+    @NotNull
+    @Column(name="preco")
+    private Double preco;
+    
     @JoinColumn(name="genero",referencedColumnName="id")
     @ManyToOne(optional=false)
     private Genero genero;
@@ -59,7 +63,7 @@ public class Jogo implements Serializable {
     public Jogo() {
     }
 
-    public Jogo(Integer id, String titulo, Integer classificacao, String sinopse, String requisitos, Double nota, Genero genero, Produtora produtora) {
+    public Jogo(Integer id, String titulo, Integer classificacao, String sinopse, String requisitos, Double nota, Genero genero, Produtora produtora, Double preco) {
         this.id = id;
         this.titulo = titulo;
         this.classificacao = classificacao;
@@ -68,6 +72,7 @@ public class Jogo implements Serializable {
         this.nota = nota;
         this.genero = genero;
         this.produtora = produtora;
+        this.preco = preco;
     }
 
     public Integer getId() {
@@ -142,12 +147,23 @@ public class Jogo implements Serializable {
         this.biblioteca = biblioteca;
     }
 
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 47 * hash + Objects.hashCode(this.id);
         return hash;
     }
+    
 
     @Override
     public boolean equals(Object obj) {
