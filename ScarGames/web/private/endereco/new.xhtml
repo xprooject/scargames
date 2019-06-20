@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <ui:composition template="../templates/template.xhtml">
+        <ui:define name="titleWindow">ScarGames - Endereço</ui:define>
+        <ui:define name="content">  
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-10">
+                    <h1>Cadastro de Endereço</h1>
+                </div>
+                <div class="ui-g-1"></div>
+                
+                <div class="ui-g-1"></div>
+                <div class="ui-g-4">
+                    <p:inputText id="endereco" placeholder="Lagradouro"
+                                 value="#{enderecoMB.endereco.logradouro}"
+                                 style="width: 100%;"/>
+                </div>
+                
+                <div class="ui-g-2">
+                    <p:inputText id="numero" placeholder="Numero"
+                                 value="#{enderecoMB.endereco.numero}"
+                                 style="width: 60%;"/>
+                </div>
+                <div class="ui-g-3">
+                    <p:inputText id="complemento" placeholder="Complemento"
+                                 value="#{enderecoMB.endereco.complemento}"
+                                 style="width: 60%;"/>
+                </div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-4">
+                    <p:inputText id="bairro" placeholder="Bairro"
+                                 value="#{enderecoMB.endereco.bairro}"
+                                 style="width: 100%;"/>
+                </div>
+                <div class="ui-g-3">
+                     <p:inputText id="cep" placeholder="CEP"
+                                  value="#{enderecoMB.endereco.cep}"
+                                 style="width: 40%;"/>    
+                </div>
+               
+                <div class="ui-g-3">
+                    <p:selectOneMenu id="cidade" value="#{cidadeMB.cidade.nome}" style="width:90%"
+                                     placeholder="Cidade" converter="entityConverter">
+                        <f:selectItems value="#{enderecoMB.enderecos}"
+                                       var="cidade" itemLabel=""
+                                       itemValue="#{cidade}"/>                                               
+                    </p:selectOneMenu>
+                </div>
+                 <div class="ui-g-1"></div>
+                  <div class="ui-g-1"></div>
+                <div class="ui-g-9">  
+                    <p:selectOneMenu id="usuario" value="" style="width:90%"
+                                     placeholder="Usuário" converter="entityConverter">
+                        <f:selectItems value="" 
+                                       var="usuario" itemLabel=""
+                                       itemValue=""/>                                             
+                    </p:selectOneMenu>
+                </div>
+ 
+            </div>
+            <div align="center" style="margin-top: 20px;">
+                <p:commandButton value="Salvar" icon="ui-icon-check"  
+                                 action="#{enderecoMB.inserir()}"
+                                 style="width: 150px; margin-right: 20px;"
+                                 update="growl"/>
+                <p:commandButton value="Cancelar" icon="ui-icon-close" 
+                                 action="#{enderecoMB.cancelar()}" 
+                                 immediate="true" style="width: 150px;"/>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -13,7 +13,7 @@
                     <div class="ui-g">
                     <div class="ui-g-1"></div>
                     <div class="ui-g-9">
-                        <h1>Usuarios</h1>
+                        <h1>Endereço</h1>
                     </div> 
                     <div class="ui-g-1">
                         <p:commandLink action="#{usuarioMB.novo()}">
@@ -27,31 +27,34 @@
                     <div class="ui-g-1"></div>
                     <div class="ui-g-10">
 
-                        <p:dataTable value="#{usuarioMB.usuario}" var="endereco" paginator="true" 
+                        <p:dataTable value="#{enderecoMB.enderecos}" var="endereco" paginator="true" 
                                      paginatorPosition="bottom" rows="10" emptyMessage="Nenhum registro encontrado" >
                             
-                            <f:facet name="header">Listagem de Usuarios</f:facet>
-                            <f:facet name="footer">Total de Registros: #{usuarioMB.usuario.size()}</f:facet>
-                            <p:column headerText="Nome" sortBy="#{usuario.nome}">
-                                <h:outputText value="#{usuarioMB.nome}"/>
+                            <f:facet name="header">Listagem de Produtoras</f:facet>
+                            <f:facet name="footer">Total de Registros: #{EnderecoMB.enderecos.size()}</f:facet>
+                            <p:column headerText="Lagradouro" sortBy="#{endereco.logradouro}">
+                                <h:outputText value="#{endereco.logradouro}"/>
                             </p:column>
-                            <p:column headerText="Email" sortBy="#{usuario.email}">
-                                <h:outputText value="#{usuarioMB.email}"/>
+                            <p:column headerText="Número" sortBy="#{endereco.numero}">
+                                <h:outputText value="#{endereco.numero}"/>
                             </p:column>
-                            <p:column headerText="Data" sortBy="#{usuario.dataNascimento}">
-                                <h:outputText value="#{usuarioMB.dataNascimento}"/>
+                            <p:column headerText="Complemento" sortBy="#{endereco.complemento}">
+                                <h:outputText value="#{endereco.complemento}"/>
                             </p:column>
-                            <p:column headerText="Telefone" sortBy="#{usuario.telefone}">
-                                <h:outputText value="#{usuarioMB.telefone}"/>
+                            <p:column headerText="Bairro" sortBy="#{endereco.bairro}">
+                                <h:outputText value="#{endereco.bairro}"/>
                             </p:column>
-                            <p:column headerText="Senha" sortBy="#{usuario.senha}">
-                                <h:outputText value="#{usuarioMB.senha}"/>
+                            <p:column headerText="CEP" sortBy="#{endereco.cep}">
+                                <h:outputText value="#{endereco.cep}"/>
+                            </p:column>
+                            <p:column headerText="Cidade" sortBy="#{endereco.cidade}">
+                                <h:outputText value="#{endereco.cidade}"/>
                             </p:column>
                             <p:column headerText="Editar" width="70" style="text-align: center;">
-                                <p:commandButton icon="ui-icon-pencil" action="#{usuarioMB.carregarDados(usuario)}"/>
+                                <p:commandButton icon="ui-icon-pencil" action="#{enderecoMB.carregarDados(endereco)}"/>
                             </p:column>
                             <p:column headerText="Excluir" width="70" style="text-align: center;">
-                                <p:commandButton icon="ui-icon-trash" action="#{usuarioMB.excluir(usuario)}" 
+                                <p:commandButton icon="ui-icon-trash" action="#{enderecoMB.excluir(endereco)}" 
                                                  onclick="if(!confirm('Tem certeza que deseja excluir?')) return false"/>
                             </p:column >
                         </p:dataTable>

@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+     <ui:composition template="../templates/template.xhtml">
+        <ui:define name="titleWindow">ScarGames - Endereço</ui:define>
+        <ui:define name="content">  
+            <div class="ui-g">
+                <div class="ui-g-1"></div>
+                <div class="ui-g-10">
+                    <h1>Cadastro de Endereço</h1>
+                </div>
+                <div class="ui-g-1"></div>
+                
+                <div class="ui-g-1"></div>
+                <div class="ui-g-4">
+                    <p:inputText id="endereco" placeholder="Lagradouro"
+                                 value="#{enderecoMB.endereco.logradouro}"
+                                 style="width: 100%;"/>
+                </div>
+                
+                <div class="ui-g-2">
+                    <p:inputText id="numero" placeholder="Numero"
+                                 value="#{enderecoMB.endereco.numero}"
+                                 style="width: 60%;"/>
+                </div>
+                <div class="ui-g-3">
+                    <p:inputText id="complemento" placeholder="Complemento"
+                                 value="#{enderecoMB.endereco.complemento}"
+                                 style="width: 60%;"/>
+                </div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-1"></div>
+                <div class="ui-g-4">
+                    <p:inputText id="bairro" placeholder="Bairro"
+                                 value="#{enderecoMB.endereco.bairro}"
+                                 style="width: 100%;"/>
+                </div>
+                <div class="ui-g-3">
+                     <p:inputText id="cep" placeholder="CEP"
+                                  value="#{enderecoMB.endereco.cep}"
+                                 style="width: 40%;"/>    
+                </div>
+               
+                <div class="ui-g-3">
+                    <p:selectOneMenu id="estado" value="#{enderecoMB.endereco.cidade}" style="width:125px"
+                                     placeholder="UF Estado">
+                        <f:selectItem itemLabel="AC" itemValue="AC" />
+                        <f:selectItem itemLabel="AL" itemValue="AL" />
+                        <f:selectItem itemLabel="AM" itemValue="AM" />
+                        <f:selectItem itemLabel="AP" itemValue="AP" />
+                        <f:selectItem itemLabel="BA" itemValue="BA" />
+                        <f:selectItem itemLabel="CE" itemValue="CE" />
+                        <f:selectItem itemLabel="DF" itemValue="DF" />
+                        <f:selectItem itemLabel="ES" itemValue="ES" />
+                        <f:selectItem itemLabel="GO" itemValue="GO" />
+                        <f:selectItem itemLabel="MA" itemValue="MA" />
+                        <f:selectItem itemLabel="MG" itemValue="MG" />
+                        <f:selectItem itemLabel="MS" itemValue="MS" />
+                        <f:selectItem itemLabel="MT" itemValue="MT" />
+                        <f:selectItem itemLabel="PA" itemValue="PA" />
+                        <f:selectItem itemLabel="PB" itemValue="PB" />
+                        <f:selectItem itemLabel="PE" itemValue="PE" />
+                        <f:selectItem itemLabel="PI" itemValue="PI" />
+                        <f:selectItem itemLabel="PR" itemValue="PR" />
+                        <f:selectItem itemLabel="RJ" itemValue="RJ" />
+                        <f:selectItem itemLabel="RN" itemValue="RN" />
+                        <f:selectItem itemLabel="RO" itemValue="RO" />
+                        <f:selectItem itemLabel="RR" itemValue="RR" />
+                        <f:selectItem itemLabel="RS" itemValue="RS" />
+                        <f:selectItem itemLabel="SC" itemValue="SC" />
+                        <f:selectItem itemLabel="SE" itemValue="SE" />
+                        <f:selectItem itemLabel="SP" itemValue="SP" />
+                        <f:selectItem itemLabel="TO" itemValue="TO" />
+                    </p:selectOneMenu>
+                </div>
+                 <div class="ui-g-1"></div>
+                  <div class="ui-g-1"></div>
+                <div class="ui-g-9">  
+                    <p:inputText id="usuario" placeholder="Usuario"
+                                 value="#{enderecoMB.endereco.usuario}"
+                                 style="width: 100%;"/>
+                </div>
+ 
+            </div>
+            <div align="center" style="margin-top: 20px;">
+                <p:commandButton value="Salvar" icon="ui-icon-check"  
+                                 action="#{enderecoMB.inserir()}"
+                                 style="width: 150px; margin-right: 20px;"
+                                 update="growl"/>
+                <p:commandButton value="Cancelar" icon="ui-icon-close" 
+                                 action="#{enderecoMB.cancelar()}" 
+                                 immediate="true" style="width: 150px;"/>
+            </div>
+        </ui:define>
+    </ui:composition>
+</html>
+
+
+
